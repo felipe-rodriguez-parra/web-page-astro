@@ -1,5 +1,5 @@
 ---
-console.log("Hello");
+import ButtonByDefault from "./ButtonByDefault.astro";
 ---
 
 <header>
@@ -7,10 +7,10 @@ console.log("Hello");
   <p>Software Engineer</p>
 
   <nav>
-    <a href="/">Home</a>
-    <a href="about">About</a>
-    <a href="contact">Contact</a>
-    <a href="/Projects">Projects</a>
+    <ButtonByDefault href="/">Home</ButtonByDefault>
+    <ButtonByDefault href="about">About</ButtonByDefault>
+    <ButtonByDefault href="contact">Contact</ButtonByDefault>
+    <ButtonByDefault href="/Projects">Projects</ButtonByDefault>
   </nav>
 </header>
 
@@ -60,49 +60,15 @@ console.log("Hello");
     width: 100%;
   }
 
-  nav a {
-    border: 2px solid var(--black-blue);
-    border-radius: 5px;
-    color: var(--black-blue);
-    display: inline-block;
-    font-size: 1.375rem;
-    height: 3.125rem;
-    line-height: 1.875rem;
-    margin: 0.5rem 0;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    text-decoration: none;
-    transition:
-      color 0.3s,
-      background-color 0.3s,
-      border-color 0.3s;
-    width: 9.375rem;
-  }
-
-  nav a:hover {
-    background-color: var(--black-blue);
-    border-color: var(--blue);
-    color: #fff;
-  }
-
   @media (min-width: 768px) {
     nav {
       flex-direction: row;
-    }
-
-    nav a {
-      margin: 0 1rem;
     }
   }
 
   @media (min-width: 1024px) {
     nav {
       padding: 2rem;
-    }
-
-    nav a {
-      font-size: 1.5rem;
-      line-height: 2rem;
     }
   }
 </style>
