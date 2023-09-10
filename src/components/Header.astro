@@ -7,29 +7,42 @@ import ButtonByDefault from "./ButtonByDefault.astro";
   <p>Software Engineer</p>
 
   <nav>
-    <ButtonByDefault href="/">Home</ButtonByDefault>
-    <ButtonByDefault href="about">About</ButtonByDefault>
-    <ButtonByDefault href="contact">Contact</ButtonByDefault>
-    <ButtonByDefault href="/Projects">Projects</ButtonByDefault>
+    <ButtonByDefault text={"Home"} href={"/"}></ButtonByDefault>
+    <ButtonByDefault text={"Blog"} href={"/blog"}></ButtonByDefault>
+    <ButtonByDefault text={"About"} href={"/about"}></ButtonByDefault>
+    <ButtonByDefault text={"Project"} href={"/projects"}></ButtonByDefault>
   </nav>
+
+  <div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </header>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav");
+
+    menuToggle!.addEventListener("click", function () {
+      menuToggle!.classList.toggle("active");
+      nav!.classList.toggle("active");
+    });
+  });
+</script>
+
 <style>
-  @font-face {
-    font-family: "Circular Std";
-    font-style: normal;
-    font-weight: bold;
-    src: url("/fonts/CircularStd-Bold.woff2") format("woff2");
-  }
 
   header {
     align-items: center;
     color: var(--black-blue);
     display: flex;
     flex-direction: column;
-    font-family: "Circular Std";
+    font-family: var(--default-font);
     font-size: 2em;
     justify-content: center;
+    padding: 1rem 0;
   }
 
   h1 {
@@ -69,6 +82,57 @@ import ButtonByDefault from "./ButtonByDefault.astro";
   @media (min-width: 1024px) {
     nav {
       padding: 2rem;
+    }
+  }
+
+  .menu-toggle {
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .menu-toggle span {
+    background-color: var(--black-blue);
+    height: 2px;
+    margin: 3px 0;
+    transition: 0.4s;
+    width: 25px;
+  }
+
+  @media (max-width: 767px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    nav {
+      background-color: skyblue;
+      display: none;
+      flex-direction: column;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 10.125rem;
+      width: 100%;
+      z-index: 1;
+    }
+
+    nav.active {
+      display: flex;
+      justify-content: flex-start;
+      padding: 0 0;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(5px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-5px) rotate(-45deg);
     }
   }
 </style>

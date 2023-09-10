@@ -1,13 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Heading from "../components/Heading.astro";
+import Content from "../components/Content.astro";
 ---
 
 <Layout title="Felipe Rodriguez Astro">
   <main>
-    
+    <Heading
+      title={"Hola, soy Felipe 👋"}
+      text={"Bienvenido! Aqui comparto mis ideas sobre ..."}
+    />
+    <Content
+      title="Actualmente"
+      description="Me encuentro trabajando en una empresa con sede en Barcelona, situada en él distrito 22@ ,work, fun and beer. 🍻 "
+    />
+    <Content
+      title="Blog"
+      description="Mira mis ultimos post en mi blog personal"
+    />
   </main>
 </Layout>
 
-<style>
-
-</style>
+<style></style>

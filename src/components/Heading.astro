@@ -1,0 +1,68 @@
+---
+interface Props {
+  title: string;
+  text: string;
+}
+
+const { title, text } = Astro.props;
+---
+
+<div class="heading">
+  <div class="heading-measure">
+    <h1 class="heading-title">{title}</h1>
+    <p class="heading-text">{text}</p>
+  </div>
+</div>
+
+<style>
+  .heading {
+    background-color: rgb(242, 247, 249);
+    padding: 3.125rem 0;
+    font-family: var(--default-font);
+    color: var(--black-blue);
+  }
+
+  .heading-measure {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .heading-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+
+  .heading-text {
+    font-family: var(--default-font);
+    color: var(--black-blue);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    .heading {
+      padding: 5rem 0;
+    }
+
+    .heading-title {
+      font-size: 3rem;
+    }
+
+    .heading-text {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-title {
+      font-size: 4rem;
+    }
+
+    .heading-text {
+      font-size: 2.5rem;
+    }
+  }
+</style>
