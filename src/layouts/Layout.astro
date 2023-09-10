@@ -28,6 +28,32 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
+
+  :root {
+    --black-blue: #05205c;
+    --default-font: Circular Std, arial, sans-serif; 
+  }
+
+  
+  @media all {
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+      body {
+      border-top: 5px solid var(--black-blue);
+    }
+
+    html {
+      font-family: system-ui, sans-serif;
+      background: skyblue;
+      background-size: 224px;
+      color-scheme: light;
+      font-size: 100%;
+    }
+  }
+
   @font-face {
   font-family: "Circular Std";
   src: url("/fonts/CircularStd-Book.woff2") format("woff");
@@ -70,21 +96,4 @@ const { title } = Astro.props;
   font-style: normal;
 }
 
-  :root {
-    --black-blue: #05205c;
-    --default-font: Circular Std, arial, sans-serif; 
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-    font-family: system-ui, sans-serif;
-    background: skyblue;
-    background-size: 224px;
-    color-scheme: light;
-    font-size: 100%;
-  }
 </style>
