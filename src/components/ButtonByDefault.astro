@@ -1,7 +1,16 @@
-<a>
-  <slot name="before"></slot>
+---
+interface Props {
+  href: string;
+  text: string;
+}
+
+const { href, text } = Astro.props;
+
+---
+
+<a href={ href }>  
   <slot />
-  <slot name="after"></slot>
+  { text }
 </a>
 
 <style>

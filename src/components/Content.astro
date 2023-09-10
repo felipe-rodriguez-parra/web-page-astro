@@ -1,0 +1,77 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  date: string | any;
+}
+
+const {
+  title,
+  description,
+  date,
+} = Astro.props;
+---
+
+<div class="content">
+  <div class="content-measure">
+    <div class="content-block">
+      <div class="content-block1">
+        <h2>{title}</h2>
+        <p>{description}</p> <p>{date}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .content {
+    padding: 3.125rem 0;
+    font-family: var(--default-font);
+    color: var(--black-blue);
+  }
+
+  .content-measure {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .content h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    .content {
+      padding: 4.6875rem 0;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .content {
+      padding: 6.25rem 0;
+    }
+
+    h2 {
+      font-size: 3.125rem;
+    }
+
+    p {
+      font-size: 1.5625rem;
+    }
+  }
+</style>
