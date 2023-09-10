@@ -2,11 +2,13 @@
 interface Props {
   title: string;
   description: string;
+  date: string | any;
 }
 
 const {
   title,
   description,
+  date,
 } = Astro.props;
 ---
 
@@ -15,7 +17,7 @@ const {
     <div class="content-block">
       <div class="content-block1">
         <h2>{title}</h2>
-        <p>{description}</p>
+        <p>{description}</p> <p>{date}</p>
       </div>
     </div>
   </div>
