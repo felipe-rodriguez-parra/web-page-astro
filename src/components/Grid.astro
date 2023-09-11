@@ -1,6 +1,6 @@
 ---
 ---
-
+<!-- TODO: Add all a & href for logos -->
 
 <div class="content">
   <div class="content-measure">
@@ -8,16 +8,16 @@
       <div class="content-block1">
         <h2>Habilidades</h2>
         <div class="logo-container">
-          <img src="/logos/node.png" alt=""/>
+          <a href="https://nodejs.org/en"><img src="/logos/node.png" alt=""/></a>
           <img src="/logos/css3-icon.jpg" alt=""/>
           <img src="/logos/javascript-icon.png" alt=""/>
           <img src="/logos/react-icon.jpg" alt=""/>
           <img src="/logos/redux.jpg" alt=""/>
           <img src="/logos/astro.png" alt=""/>
           <img src="/logos/git-icon.jpg" alt=""/>
+          <img src="/logos/firebase-icon.png" alt=""/>
           <img src="/logos/google-cloud.png" alt=""/>
           <img src="/logos/typescriptlang.webp" alt=""/>
-          <img src="/logos/firebase-icon.png" alt=""/>
         </div>
       </div>
     </div>
@@ -43,9 +43,25 @@
     margin-bottom: 1.25rem;
   }
 
+  .logo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.logo-container img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-container img:hover {
+  transform: scale(1.1); /* Zoom al 110% en hover */
+}
+
   img {
-    width: 4.6875rem;
-    height: 4.6875rem;
+    width: 100px;
+    height: 100px;
     margin: 1.25rem;
     padding: 0.625rem;
   }
@@ -59,9 +75,6 @@
       font-size: 2.5rem;
     }
 
-    p {
-      font-size: 1.25rem;
-    }
   }
 
   @media (min-width: 1024px) {
@@ -73,8 +86,5 @@
       font-size: 3.125rem;
     }
 
-    p {
-      font-size: 1.5625rem;
-    }
   }
 </style>
