@@ -5,10 +5,6 @@ Inside of your Astro project, you'll see the following folders and files:
 ```
 .
 ├── astro.config.mjs
-├── node_modules
-│   ├── astro -> .pnpm/astro@3.0.10/node_modules/astro
-│   └── @astrojs
-├── order.css
 ├── package.json
 ├── pnpm-lock.yaml
 ├── public
