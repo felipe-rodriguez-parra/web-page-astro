@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Houston houston">
+  <div class="container">
+    <img src="https://gifdb.com/images/high/it-s-fine-elmo-on-fire-e84dmeee3by1lq70.gif"/>
+    <h1>404</h1>
+    <p>Page not found</p>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: var(--default-font);
+    color: var(--white);
+  }
+
+  img {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    border-radius: 10px 10px;
+    
+  }
+  
+  h1 {
+    font-size: 5rem;
+    margin: 0;
+
+  }
+
+  p {
+    font-size: 2rem;
+    margin: 0;
+  }
+</style>

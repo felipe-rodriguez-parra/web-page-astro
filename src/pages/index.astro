@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Heading from "../components/Heading.astro";
 import Content from "../components/Content.astro";
+import ListBlogs from "../components/ListBlogs.astro";
 ---
 
 <Layout title="Felipe Rodriguez Astro">
@@ -15,12 +16,65 @@ import Content from "../components/Content.astro";
       description="Me encuentro trabajando en una empresa con sede en Barcelona, situada en él distrito 22@ ,work, fun and beer. 🍻 "
       date={null}
     />
+    <div class="image-container">
+      <img src="/logos/distrito-noche.jpg" alt="office" />
+      <p class="figcaption">Torre Glòries, en el distrito 22@ de Barcelona.</p>
+    </div>
     <Content
       title="Blog"
       description="Mira mis ultimos post en mi blog personal"
       date={null}
     />
+    <ListBlogs 
+      title="Hábitos atómicos"
+      date="Enero 29 2022"
+      topic="Libros"
+      url="/blog/habitos-atomicos"
+    />
+    <ListBlogs 
+      title="Antifrágil"
+      date="Enero 5 2022"
+      topic="Libros"
+      url="/blog/antifragil"
+    />
+    <ListBlogs 
+      title="Testing VoIP con SIPP"
+      date="Diciembre 30 2022"
+      topic="Tecnología"
+      url="/blog/testing-voip-con-sipp"
+    />
   </main>
 </Layout>
 
-<style></style>
+<style>
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 1rem 0;
+  }
+  .figcaption {
+    font-size: 0.8rem;
+    color: rgb(242,247,249);
+  }
+
+  @media (min-width: 768px) {
+    .image-container {
+      padding: 0 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .image-container {
+      padding: 0 4rem;
+    }
+  }
+</style>
