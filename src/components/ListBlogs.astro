@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  topic: string;
+  url: string;
+}
+
+const { title, date, topic, url } = Astro.props;
+---
+
+<div class="publication">
+  <div class="publication-measure">
+    <h3 class="publication-title">
+      <a href={url}>{title}</a>
+    </h3>
+    <p class="publication-meta">{topic} | {date}</p>
+  </div>
+</div>
+
+
+<style>
+  .publication {
+    margin-bottom: 2rem;
+    font-family: var(--default-font);
+    color: var(--black-blue);
+  }
+
+  a {
+    text-decoration: none;
+    display: inline;
+    /* padding-bottom: 1px; */
+    border-bottom: 1px solid var(--black-blue);
+    color: var(--black-blue);
+  }
+
+  a:hover {
+    color: var(--black-blue);
+    border-bottom: 1px solid;
+  }
+
+  a:visited {
+    color: var(--black-blue);
+  }
+
+  
+  .publication-measure {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .publication-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .publication-meta {
+    margin-bottom: 0;
+    font-size: 0.75rem;
+    color: rgb(242,247,249);
+  }
+</style>
