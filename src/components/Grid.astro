@@ -1,0 +1,90 @@
+---
+---
+<!-- TODO: Add all a & href for logos -->
+
+<div class="content">
+  <div class="content-measure">
+    <div class="content-block">
+      <div class="content-block1">
+        <h2>Habilidades</h2>
+        <div class="logo-container">
+          <a href="https://nodejs.org/en"><img src="/logos/node.png" alt=""/></a>
+          <img src="/logos/css3-icon.jpg" alt=""/>
+          <img src="/logos/javascript-icon.png" alt=""/>
+          <img src="/logos/react-icon.jpg" alt=""/>
+          <img src="/logos/redux.jpg" alt=""/>
+          <img src="/logos/astro.png" alt=""/>
+          <img src="/logos/git-icon.jpg" alt=""/>
+          <img src="/logos/firebase-icon.png" alt=""/>
+          <img src="/logos/google-cloud.png" alt=""/>
+          <img src="/logos/typescriptlang.webp" alt=""/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style >
+  .content {
+    padding: 3.125rem 0;
+    font-family: var(--default-font);
+    color: var(--black-blue);
+  }
+
+  .content-measure {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .content h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+
+  .logo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.logo-container img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-container img:hover {
+  transform: scale(1.1); /* Zoom al 110% en hover */
+}
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin: 1.25rem;
+    padding: 0.625rem;
+  }
+
+  @media (min-width: 768px) {
+    .content {
+      padding: 4.6875rem 0;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+  }
+
+  @media (min-width: 1024px) {
+    .content {
+      padding: 6.25rem 0;
+    }
+
+    h2 {
+      font-size: 3.125rem;
+    }
+
+  }
+</style>
