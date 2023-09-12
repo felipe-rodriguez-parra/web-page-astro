@@ -25,45 +25,57 @@ import ListBlogs from "../components/ListBlogs.astro";
       description="Mira mis ultimos post en mi blog personal"
       date={null}
     />
-    <ListBlogs 
-      title="Hábitos atómicos"
-      date="Enero 29 2022"
-      topic="Libros"
-      url="/blog/habitos-atomicos"
-    />
-    <ListBlogs 
-      title="Antifrágil"
-      date="Enero 5 2022"
-      topic="Libros"
-      url="/blog/antifragil"
-    />
-    <ListBlogs 
-      title="Testing VoIP con SIPP"
-      date="Diciembre 30 2022"
-      topic="Tecnología"
-      url="/blog/testing-voip-con-sipp"
-    />
+    <div class="publication">
+      <ListBlogs
+        title="Nuevos horizontes"
+        date="Enero 29 2022"
+        topic="Personal"
+        url="/blog/personal/nuevos-horizontes"
+      />
+      <ListBlogs
+        title="Hábitos atómicos"
+        date="Enero 29 2022"
+        topic="Libros"
+        url="/blog/libros/habitos-atomicos"
+      />
+      <ListBlogs
+        title="Antifrágil"
+        date="Enero 5 2022"
+        topic="Libros"
+        url="/blog/antifragil"
+      />
+      <ListBlogs
+        title="Testing VoIP con SIPP"
+        date="Diciembre 30 2022"
+        topic="Tecnología"
+        url="/blog/testing-voip-con-sipp"
+      />
+    </div>
   </main>
 </Layout>
 
 <style>
   .image-container {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     padding: 0 1rem;
   }
 
   img {
-    width: 100%;
     height: 100%;
-    object-fit: cover;
     margin: 1rem 0;
+    object-fit: cover;
+    width: 100%;
   }
   .figcaption {
+    color: rgb(242, 247, 249);
     font-size: 0.8rem;
-    color: rgb(242,247,249);
+  }
+
+  .publication {
+    padding: 3.125rem 0 3.125rem 0;
   }
 
   @media (min-width: 768px) {
