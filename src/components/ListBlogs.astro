@@ -9,55 +9,62 @@ interface Props {
 const { title, date, topic, url } = Astro.props;
 ---
 
-<div class="publication">
-  <div class="publication-measure">
-    <h3 class="publication-title">
-      <a href={url}>{title}</a>
-    </h3>
-    <p class="publication-meta">{topic} | {date}</p>
-  </div>
+<div class="publication-measure">
+  <h3 class="publication-title">
+    <a class="title" href={url}>{title}</a>
+  </h3>
+  <p class="publication-meta"><a href=`/blog/${topic}/`>{topic}</a> | {date}</p>
 </div>
 
-
 <style>
-  .publication {
-    margin-bottom: 2rem;
-    font-family: var(--default-font);
-    color: var(--black-blue);
-  }
-
-  a {
-    text-decoration: none;
-    display: inline;
-    /* padding-bottom: 1px; */
+  .title a {
+    /* display: inline; */
     border-bottom: 1px solid var(--black-blue);
     color: var(--black-blue);
+    text-decoration: none;
   }
 
-  a:hover {
-    color: var(--black-blue);
+  .title a:hover {
     border-bottom: 1px solid;
+    color: var(--black-blue);
   }
 
   a:visited {
     color: var(--black-blue);
   }
 
-  
   .publication-measure {
-    max-width: 60rem;
+    color: var(--black-blue);
+    font-family: var(--default-font);
     margin: 0 auto;
+    margin-bottom: 2rem;
+    max-width: 60rem;
     padding: 0 2rem;
   }
 
   .publication-title {
-    margin-bottom: 0.5rem;
     font-size: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
   .publication-meta {
-    margin-bottom: 0;
+    color: rgb(242, 247, 249);
     font-size: 0.75rem;
-    color: rgb(242,247,249);
+    margin-bottom: 0;
+  }
+  .publication-meta a {
+    border-bottom: 1px solid var(--white);
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .publication-meta a:hover {
+    border-bottom: 1px solid var(--white);
+    color: var(--white);
+  }
+
+  .publication-meta a:visited {
+    border-bottom: 1px solid var(--white);
+    color: var(--white);
   }
 </style>

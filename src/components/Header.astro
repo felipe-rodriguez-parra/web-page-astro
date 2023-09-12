@@ -3,14 +3,14 @@ import ButtonByDefault from "./ButtonByDefault.astro";
 ---
 
 <header>
-  <h1>Felipe Rodriguez</h1>
+  <a href="/"><h1>Felipe Rodriguez</h1></a>
   <p>Web apps developer</p>
 
   <nav>
-    <ButtonByDefault text={"Home"} href={"/"}></ButtonByDefault>
-    <ButtonByDefault text={"Blog"} href={"/blog"}></ButtonByDefault>
-    <ButtonByDefault text={"About"} href={"/about"}></ButtonByDefault>
-    <ButtonByDefault text={"Project"} href={"/projects"}></ButtonByDefault>
+    <ButtonByDefault text={"Home"} href={"/"} />
+    <ButtonByDefault text={"Blog"} href={"/blog"} />
+    <ButtonByDefault text={"About"} href={"/about"} />
+    <ButtonByDefault text={"Project"} href={"/projects"} />
   </nav>
 
   <div class="menu-toggle">
@@ -33,6 +33,11 @@ import ButtonByDefault from "./ButtonByDefault.astro";
 </script>
 
 <style>
+  a {
+    color: var(--black-blue);
+    display: inline;
+    text-decoration: none;
+  }
 
   header {
     align-items: center;
@@ -109,7 +114,7 @@ import ButtonByDefault from "./ButtonByDefault.astro";
       background-color: skyblue;
       display: none;
       flex-direction: column;
-      height: 100%;
+      height: 100vh;
       left: 0;
       position: absolute;
       top: 10.125rem;

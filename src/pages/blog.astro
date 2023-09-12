@@ -1,16 +1,40 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Heading from '../components/Heading.astro';
+import Layout from "../layouts/Layout.astro";
+import Heading from "../components/Heading.astro";
+import ListBlogs from "../components/ListBlogs.astro";
 ---
 
 <Layout title="Felipe Rodriguez Astro">
   <main>
-    <Heading 
-      title={"Blog"} 
-      text={"Aquí encontrarás todo tipo de artículos relacionados con tecnología, programación o filosofía."}/>
+    <Heading
+      title={"Blog"}
+      text={"Aquí encontrarás todo tipo de artículos relacionados con tecnología, programación o filosofía."}
+    />
+    <div class="publication">
+      <ListBlogs
+      title="Hábitos atómicos"
+      date="Enero 29 2022"
+      topic="Libros"
+      url="/blog/habitos-atomicos"
+    />
+    <ListBlogs
+      title="Antifrágil"
+      date="Enero 5 2022"
+      topic="Libros"
+      url="/blog/antifragil"
+    />
+    <ListBlogs
+      title="Testing VoIP con SIPP"
+      date="Diciembre 30 2022"
+      topic="Tecnología"
+      url="/blog/testing-voip-con-sipp"
+    />
+    </div>
   </main>
 </Layout>
 
 <style>
-
+  .publication {
+    padding: 3.125rem 0 3.125rem 0;
+  }
 </style>
