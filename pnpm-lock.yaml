@@ -8,6 +8,9 @@ dependencies:
   astro:
     specifier: ^3.0.10
     version: 3.0.10
+  shiki:
+    specifier: ^0.14.4
+    version: 0.14.4
 
 packages:
 

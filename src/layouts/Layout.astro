@@ -44,16 +44,23 @@ const { title } = Astro.props;
       padding: 0;
     }
 
-      body {
+    html {
+      height: 100vh;
+    }
+
+    body {
       border-top: 5px solid var(--black-blue);
+      height: 100vh;
+      min-width: 100%;
     }
 
     html {
-      font-family: system-ui, sans-serif;
+      font-family: var(--default-font);
       background: skyblue;
       background-size: 224px;
       color-scheme: light;
       font-size: 100%;
+      color: var(--black-blue)
     }
   }
 

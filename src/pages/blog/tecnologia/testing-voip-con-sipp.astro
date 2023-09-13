@@ -1,0 +1,222 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Code } from "astro:components";
+import "../../../styles/blog.css";
+---
+
+<Layout title="SIPP">
+  <div class="content">
+    <div class="content-measure">
+      <div class="content-indent">
+        <p>
+          La suite de test SIPP (Scripted Internet Phone Protocol) es una
+          herramienta de línea de comandos que se utiliza para simular llamadas
+          de voz sobre IP (VoIP) y medir el rendimiento de los servidores de
+          VoIP y otros equipos de red.
+        </p>
+
+        <p>
+          Es comúnmente utilizada por administradores de red y ingenieros de
+          sistemas para probar la calidad de servicio (QoS) de la red de VoIP y
+          asegurar que cumpla con los estándares de rendimiento requeridos.
+        </p>
+
+        <p>
+          En este artículo no se cubre la forma de instalar el paquete SIPP,
+          depende de muchos factores. Esta es la <a
+            href="https://sipp.sourceforge.net/doc/reference.html">página</a
+          > oficial donde recomiendan fuentes y metodos de instalación
+        </p>
+
+        <h2>¿Pero, que es VoIP?</h2>
+
+        <p>
+          VoIP es el acrónimo de "Voz sobre IP", que se refiere a la tecnología
+          que permite realizar llamadas telefónicas a través de Internet en
+          lugar de utilizar líneas telefónicas tradicionales. Esto se logra
+          convirtiendo la señal de voz en un formato digital que puede ser
+          transmitido a través de una red de datos, como Internet.
+        </p>
+
+        <p>
+          El protocolo VoIP es un conjunto de reglas y estándares que se
+          utilizan para establecer y controlar la comunicación de voz sobre una
+          red de datos. Estos estándares incluyen cómo se codifica y decodifica
+          la señal de voz, cómo se establece y controla la conexión de llamada,
+          y cómo se gestiona la calidad de servicio (QoS) durante la llamada.
+        </p>
+
+        <p>
+          Existen varios protocolos VoIP diferentes, cada uno con sus propias
+          características y usos específicos. Algunos de los protocolos VoIP más
+          comunes son SIP (Session Initiation Protocol), H.323 y MGCP (Media
+          Gateway Control Protocol).
+        </p>
+
+        <p>
+          VoIP se ha vuelto cada vez más popular en los últimos años debido a su
+          flexibilidad y a la capacidad de realizar llamadas a bajo costo o
+          incluso de forma gratuita utilizando servicios de llamadas por
+          Internet como Skype o Google Voice incluso WhatsApp. También es
+          comúnmente utilizado por empresas para implementar sistemas de
+          comunicación de voz sobre IP en sus redes de datos.
+        </p>
+
+        <h2>Como utilizar SIPP</h2>
+        <p>
+          A continuación se presentan algunos ejemplos de cómo utilizar SIPP:
+        </p>
+        <ol>
+          <li>
+            1. Para iniciar una prueba de rendimiento, utilice el siguiente
+            comando:
+          </li>
+          <div class="code-block">
+            <Code
+              code={`sipp -sf [configfile] -i [ip server] -p [port server]`}
+              lang="sh"
+              wrap
+            />
+          </div>
+
+          <li>
+            2. Para utilizar un archivo de configuración específico, utilice el
+            siguiente comando:
+          </li>
+          <div class="code-block">
+            <Code
+              code="sipp -f [configfile] -i [ip server] -p [port server]"
+              lang="sh"
+              wrap
+            />
+          </div>
+
+          <li>
+            3. Para especificar el número de usuarios concurrentes en la prueba,
+            utilice el siguiente comando:
+          </li>
+
+          <div class="code-block">
+            <Code
+              code="sipp -sf [configfile] -i [ip server] -p [port server] -users [number of users]"
+              lang="sh"
+              wrap
+            />
+          </div>
+
+          <li>
+            4. Para obtener un informe detallado de la prueba, utilice el
+            siguiente comando:
+          </li>
+
+          <div class="code-block">
+            <Code
+              code="sipp -sf [configfile] -i [ip server] -p [port server] -trace_err -trace_msg -trace_screen"
+              lang="sh"
+              wrap
+            />
+          </div>
+        </ol>
+
+        <p>
+          Es importante tener en cuenta que SIPP es una herramienta de línea de
+          comandos avanzada y puede ser difícil de usar para usuarios sin
+          experiencia previa en línea de comandos o en pruebas de rendimiento de
+          VoIP. Si tiene dificultades para utilizar SIPP, le recomendamos
+          consultar la documentación del software o buscar tutoriales en línea.
+        </p>
+
+        <h2>Posibles escenarios</h2>
+        <p>
+          SIPP incorpora una serie de escenarios por defecto. Un ejemplo de un
+          posible escenario:
+        </p>
+
+        <div class="code-block">
+          <Code
+            code={`<scenario name="Prueba de rendimiento básica">
+            <send retrans="500">
+              <![CDATA[
+                  INVITE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
+                  Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+                  From: sipp <sip:sipp@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+                  To: sut <sip:[service]@[remote_ip]:[remote_port]>
+                  Call-ID: [call_id]
+                  CSeq: 1 INVITE
+                  Contact: sip:sipp@[local_ip]:[local_port]
+                  Max-Forwards: 70
+                  Subject: Performance Test
+                  Content-Type: application/sdp
+                  Content-Length: [len]
+  
+                  v=0
+                  o=user1 53655765 2353687637 IN IP[local_ip_type] [local_ip]
+                  s=-
+                  c=IN IP[media_ip_type] [media_ip]
+                  t=0 0
+                  m=audio [media_port] RTP/AVP 0 101
+                  a=rtpmap:0 PCMU/8000
+                  a=rtpmap:101 telephone-event/8000
+                  a=fmtp:101 0-15
+              ]]>
+            </send>
+            <recv response="100"
+              optional="true">
+            </recv>
+            <recv response="180"
+              optional="true">
+            </recv>
+            <recv response="200"
+            <action>
+            optional="false">
+                  <ereg regexp="Content-Type: application/sdp"
+                    search_in="hdr"
+                    header="Content-Type:"
+                    assign_to="1" />
+              </action>
+            </recv>
+            <send>
+              <![CDATA[
+                  ACK sip:[service]@[remote_ip]:[remote_port] SIP/2.0
+                  Via: SIP/2.0/[transport] [local_ip]:[local_ip];branch=[branch]
+                  From: sipp <sip:sipp@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+                  To: sut <sip:[service]@[remote_ip]:[remote_port]>[remote_tag_param]
+                  Call-ID: [call_id]
+                  CSeq: 2 ACK
+                  Contact: sip:sipp@[local_ip]:[local_port]
+                  Max-Forwards: 70
+                  Subject: Performance Test
+                  Content-Length: 0
+              ]]>
+            </send>
+            <recv request="BYE"
+              optional="true">
+            </recv>
+            <send>
+              <![CDATA[
+                  SIP/2.0 200 OK
+                  Via: SIP/2.0/[transport] [local_ip]:[local_ip];branch=[branch]
+                    From: sipp <sip:sipp@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+                    To: sut <sip:[service]@[remote_ip]:[remote_port]>[remote_tag_param]
+                    Call-ID: [call_id]
+                    CSeq: 2 BYE
+                    Contact: sip:sipp@[local_ip]:[local_port]
+                    Max-Forwards: 70
+                    Subject: Performance Test
+                    Content-Length: 0
+                ]]>
+              </send>
+          </scenario>`}
+            lang="xml"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .code-block {
+    margin: 1rem 0;
+  }
+</style>
