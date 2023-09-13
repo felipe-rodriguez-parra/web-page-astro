@@ -1,0 +1,23 @@
+.content {
+  padding: 0 2rem;
+  text-align: justify;
+}
+
+.content-measure {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+p {
+  line-height: 1.5;
+  padding-bottom: 1.5rem;
+}
+
+li {
+  line-height: 1.5;
+  padding-bottom: 16px;
+  list-style: none;
+}
+h2 {
+  padding-bottom: 16px;
+}
