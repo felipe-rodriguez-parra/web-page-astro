@@ -17,20 +17,15 @@ const { title, date, topic, url } = Astro.props;
 </div>
 
 <style>
-  .title a {
-    /* display: inline; */
+  .title {
     border-bottom: 1px solid var(--black-blue);
     color: var(--black-blue);
     text-decoration: none;
   }
 
-  .title a:hover {
+  .title:hover {
     border-bottom: 1px solid;
-    color: var(--black-blue);
-  }
-
-  a:visited {
-    color: var(--black-blue);
+    color: #ffdc5d;
   }
 
   .publication-measure {
@@ -59,12 +54,7 @@ const { title, date, topic, url } = Astro.props;
   }
 
   .publication-meta a:hover {
-    border-bottom: 1px solid var(--white);
-    color: var(--white);
-  }
-
-  .publication-meta a:visited {
-    border-bottom: 1px solid var(--white);
-    color: var(--white);
+    border-bottom: 1px solid #ffdc5d;
+    color: #ffdc5d;
   }
 </style>
