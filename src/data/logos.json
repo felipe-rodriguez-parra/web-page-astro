@@ -1,0 +1,44 @@
+{
+  "logos": [
+    {
+      "nombre": "../../logos/node.webp",
+      "alt": "Descripción de astro"
+    },
+    {
+      "nombre": "../../logos/css3-icon.webp",
+      "alt": "Descripción de css3-icon"
+    },
+    {
+      "nombre": "../../logos/firebase-icon.webp",
+      "alt": "Descripción de firebase-icon"
+    },
+    {
+      "nombre": "../../logos/git-icon.webp",
+      "alt": "Descripción de git-icon"
+    },
+    {
+      "nombre": "../../logos/google-cloud.webp",
+      "alt": "Descripción de google-cloud"
+    },
+    {
+      "nombre": "../../logos/javascript-icon.webp",
+      "alt": "Descripción de javascript-icon"
+    },
+    {
+      "nombre": "../../logos/jest-logo.webp",
+      "alt": "Descripción de jest-logo"
+    },
+    {
+      "nombre": "../../logos/react-icon.webp",
+      "alt": "Descripción de react-icon"
+    },
+    {
+      "nombre": "../../logos/redux.webp",
+      "alt": "Descripción de redux"
+    },
+    {
+      "nombre": "../../logos/typescriptlang.webp",
+      "alt": "Descripción de typescriptlang"
+    }
+  ]
+}
