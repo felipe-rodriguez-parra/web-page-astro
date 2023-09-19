@@ -9,6 +9,8 @@ interface Props {
 const { title, date, topic, url } = Astro.props;
 ---
 
+<!-- When use this component always add a <div class=publication> for envolve all the ListBlogs components-->
+
 <div class="publication-measure">
   <h3 class="publication-title">
     <a class="title" href={url}>{title}</a>
