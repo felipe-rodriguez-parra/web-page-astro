@@ -1,6 +1,21 @@
 ---
+import Img from "./Img.astro";
+
+export interface Root {
+  logos: Logo[];
+}
+
+export interface Logo {
+  nombre: string;
+  alt: string;
+}
+
+interface Props {
+  logos: Logo[];
+}
+
+const { logos } = Astro.props;
 ---
-<!-- TODO: Add all a & href for logos -->
 
 <div class="content">
   <div class="content-measure">
@@ -8,23 +23,18 @@
       <div class="content-block1">
         <h2>Habilidades</h2>
         <div class="logo-container">
-          <a href="https://nodejs.org/en"><img src="/logos/node.png" alt=""/></a>
-          <img src="/logos/css3-icon.jpg" alt=""/>
-          <img src="/logos/javascript-icon.png" alt=""/>
-          <img src="/logos/react-icon.jpg" alt=""/>
-          <img src="/logos/redux.jpg" alt=""/>
-          <img src="/logos/astro.png" alt=""/>
-          <img src="/logos/git-icon.jpg" alt=""/>
-          <img src="/logos/firebase-icon.png" alt=""/>
-          <img src="/logos/google-cloud.png" alt=""/>
-          <img src="/logos/typescriptlang.webp" alt=""/>
+          {
+            logos.map((logo) => {
+              return <Img source={logo.nombre} description={logo.alt} />;
+            })
+          }
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<style >
+<style>
   .content {
     padding: 3.125rem 0;
     font-family: var(--default-font);
@@ -44,26 +54,9 @@
   }
 
   .logo-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 20px;
-}
-
-.logo-container img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
-}
-
-.logo-container img:hover {
-  transform: scale(1.1); /* Zoom al 110% en hover */
-}
-
-  img {
-    width: 100px;
-    height: 100px;
-    margin: 1.25rem;
-    padding: 0.625rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
   }
 
   @media (min-width: 768px) {
@@ -74,7 +67,6 @@
     h2 {
       font-size: 2.5rem;
     }
-
   }
 
   @media (min-width: 1024px) {
@@ -85,6 +77,5 @@
     h2 {
       font-size: 3.125rem;
     }
-
   }
 </style>

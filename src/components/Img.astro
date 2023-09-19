@@ -1,0 +1,26 @@
+---
+interface Props {
+  source: string | any;
+  description: string | any;
+}
+
+const { source, description } = Astro.props;
+---
+
+<img src={source} alt={description} />
+
+<style>
+  img {
+    width: 5.9375rem;
+    height: 6.25rem;
+    margin: 1.25rem;
+    padding: 0.625rem;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  img:hover {
+    transform: scale(1.1); /* Zoom al 110% en hover */
+  }
+</style>

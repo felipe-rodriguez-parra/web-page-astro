@@ -3,16 +3,19 @@ import Layout from "../layouts/Layout.astro";
 import Heading from "../components/Heading.astro";
 import Content from "../components/Content.astro";
 import Grid from "../components/Grid.astro";
+import { logos } from "../data/logos.json";
 ---
 
 <Layout title="Felipe Rodriguez Astro">
   <main>
-    <Heading title="About" text="Intento dar soluciones a problemas complejos a traves de soluciones sencillas " />
+    <Heading title="About" text="" />
     <Content
       title="Sobre mí"
       description="En el ámbito del desarrollo, destaco en la creación de aplicaciones web CRUD y REST, utilizando lenguajes y herramientas adecuadas a las especificaciones del proyecto. Esto se traduce en la creación de componentes de acceso a datos altamente efectivos."
       date={null}
     />
-    <Grid />
+    <Grid 
+      logos={logos}
+    />
   </main>
 </Layout>
