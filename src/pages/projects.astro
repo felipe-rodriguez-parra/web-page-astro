@@ -2,17 +2,76 @@
 import Layout from '../layouts/Layout.astro';
 import Heading from '../components/Heading.astro';
 import Grid from '../components/Grid.astro';
+import Content from '../components/Content.astro';
+import ButtonByDefault from '../components/ButtonByDefault.astro';
 ---
-
+<!-- TODO: Reescalar la imagen en gimp -->
 <Layout title="Felipe Rodriguez Astro">
   <main>
     <Heading 
       title={"Development"} 
       text={""}/>
-    <!-- <Grid /> -->
+    <Content 
+    title={"Hecate"}
+    description={"Hades es el nombre en clave para el desarrollo de un add-on en Jira que conecta la API ChatGPT para resolver dudas con relación al ticket dentro de la plataforma. Está desarrollado sobre ForgeCLI con JavaScript, React, Redux, CSS y pronto estará en producción en el Marketplace de Atlassian."}
+    date={null}
+    />
+    <div class="container-img">
+      <div class="container-img-measure">
+        <img src="/projects-logos/hecate.webp" alt="hecate project" class="hecate"/>
+        <ButtonByDefault 
+          href=''
+          text={"Ver mas"}
+        />
+      </div>
+    </div>
+
+    <Content 
+    title={"Kronos"}
+    description={"Kronos es el nombre en clave para el desarrollo de un add-on para Jira que permite el control del tiempo de todos los tickets en una sola interfaz."}
+    date={null}
+    />
+    <div class="container-img">
+      <div class="container-img-measure">
+        <img src="/projects-logos/kronos.webp" alt="Kronos project" />
+        <ButtonByDefault 
+          href=''
+          text={"Ver mas"}
+        />
+      </div>
+    </div>
   </main>
 </Layout>
 
 <style>
+.container-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 2rem 0;
+}
 
+.container-img-measure {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  max-height: 600px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hecate {
+  width: 15.625rem;
+}
 </style>

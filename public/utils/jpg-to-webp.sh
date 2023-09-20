@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Array de nombres de archivo de las fotos JPG
-fotos=("css3-icon.jpg" "distrito.jpg" "distrito-noche.jpg" "git-icon.jpg" "jpg-to-webp.js" "react-icon.jpg" "redux.jpg")
+# fotos=("css3-icon.jpg" "distrito.jpg" "distrito-noche.jpg" "git-icon.jpg" "jpg-to-webp.js" "react-icon.jpg" "redux.jpg")
+
+fotos=("hecate.png")
 
 # Directorio de salida para los archivos WebP
 directorioSalida="webp/"
@@ -9,7 +11,7 @@ directorioSalida="webp/"
 # Iterar a través de cada foto JPG y ejecutar el comando cwebp
 for foto in "${fotos[@]}"
 do
-  if [[ $foto == *.jpg ]]; then
+  if [[ $foto == *.png ]]; then
     # Ejecutar cwebp para convertir la foto JPG a WebP
     cwebp -q 100 "$foto" -o "${directorioSalida}${foto%.jpg}.webp"
     

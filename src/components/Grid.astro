@@ -12,16 +12,17 @@ export interface Logo {
 
 interface Props {
   logos: Logo[];
+  title: string;
 }
 
-const { logos } = Astro.props;
+const { logos, title } = Astro.props;
 ---
 
 <div class="content">
   <div class="content-measure">
     <div class="content-block">
       <div class="content-block1">
-        <h2>Habilidades</h2>
+        <h2>{title}</h2>
         <div class="logo-container">
           {
             logos.map((logo) => {
