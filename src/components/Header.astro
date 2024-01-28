@@ -4,13 +4,11 @@ import ButtonByDefault from "./ButtonByDefault.astro";
 
 <header>
   <a href="/"><h1>Felipe Rodriguez</h1></a>
-  <p>Web apps developer</p>
 
   <nav>
     <ButtonByDefault text={"Home"} href={"/"} />
     <ButtonByDefault text={"Blog"} href={"/blog"} />
-    <ButtonByDefault text={"About"} href={"/about"} />
-    <ButtonByDefault text={"Projects"} href={"/projects"} />
+    <ButtonByDefault text={"Projects 🚧"} href={"/"} />
   </nav>
 
   <div class="menu-toggle">
@@ -51,18 +49,12 @@ import ButtonByDefault from "./ButtonByDefault.astro";
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: var(--h1);
     letter-spacing: -0.03em;
     line-height: 2.5rem;
     max-width: 62.5rem;
     padding: 1rem;
     word-break: break-word;
-  }
-
-  p {
-    font-size: 1.5rem;
-    line-height: 1.875rem;
-    max-width: 62.5rem;
   }
 
   nav {
@@ -117,7 +109,7 @@ import ButtonByDefault from "./ButtonByDefault.astro";
       height: 100vh;
       left: 0;
       position: absolute;
-      top: 10.125rem;
+      top: 8.125rem;
       width: 100%;
       z-index: 1;
     }
